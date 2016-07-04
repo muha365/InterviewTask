@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace KnockKnock.Core
 {
-    public static class FibonacciExtension
+    public static class FibonacciUtils
     {
         static ConcurrentDictionary<int, long> cache = new ConcurrentDictionary<int, long>(100,95);
         public static long Fib(this long n)
