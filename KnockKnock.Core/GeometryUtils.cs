@@ -9,7 +9,7 @@ namespace KnockKnock.Core
         public static TriangleType GetTriangleName(int a, int b, int c)
         { 
             //Check if it is Triangle
-            if ((a <= 0 || b <= 0 || c <= 0) || (!(c + b > a) || !(a + b > c) || !(a + c > b)))
+            if (a <= 0 || b <= 0 || c <= 0 || !(c + b > a) || !(a + b > c) || !(a + c > b))
             {
                 return TriangleType.Error;
             }

@@ -16,6 +16,7 @@ namespace KnockKnock.Core.Tests
         [InlineData(0, 0, 0, TriangleType.Error)]
         [InlineData(0, 110, 20, TriangleType.Error)]
         [InlineData(50, 50, 50, TriangleType.Equilateral)]
+        [InlineData(5, 3, 4, TriangleType.Scalene)]
         [InlineData(-1, -1, -50, TriangleType.Error)]
         [InlineData(90, 110, 50, TriangleType.Scalene)]
         [Theory]
