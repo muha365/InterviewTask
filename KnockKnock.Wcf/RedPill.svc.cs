@@ -1,5 +1,6 @@
 ﻿using KnockKnock.Core;
 using System;
+using System.Runtime.Caching;
 using System.ServiceModel;
 using System.ServiceModel.Activation;
 
@@ -24,7 +25,20 @@ namespace KnockKnock.Wcf
 
         public string ReverseWords(string s)
         {
-            throw new NotImplementedException();
+            var key = string.Format("RedPill-RW-{0}", s.GetHashCode());
+            var cacheItem = MemoryCache.Default.GetCacheItem(key);
+            string result = string.Empty;
+
+            if (cacheItem != null)
+            {
+                result = (string)cacheItem.Value;
+            }
+            else
+            {
+                result = s.ReverseString();
+                MemoryCache.Default.Add(new CacheItem(key, result), new CacheItemPolicy() { SlidingExpiration = TimeSpan.FromMinutes(60) });
+            }
+            return result; 
         }
 
         public Guid WhatIsYourToken()

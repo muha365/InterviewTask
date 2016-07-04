@@ -11,11 +11,12 @@ namespace KnockKnock.Core.Tests
     {
 
         [InlineData(60, 60, 60, TriangleType.Equilateral)]
+        [InlineData(208, 208, 168, TriangleType.Isosceles)]
         [InlineData(30, 120, 30, TriangleType.Error)]
         [InlineData(0, 0, 0, TriangleType.Error)]
         [InlineData(0, 110, 20, TriangleType.Error)]
         [InlineData(50, 50, 50, TriangleType.Equilateral)]
-        [InlineData(-1, -1, 95, TriangleType.Error)]
+        [InlineData(-1, -1, -50, TriangleType.Error)]
         [InlineData(90, 110, 50, TriangleType.Scalene)]
         [Theory]
         public void GetTriangleType(int a, int b, int c, TriangleType expected)
