@@ -29,12 +29,12 @@ namespace KnockKnock.Wcf
 
         public Guid WhatIsYourToken()
         {
-            throw new NotImplementedException();
+            return new Guid("555f5c57-62be-4e9b-93b8-4e6134458c77");
         }
 
         public TriangleType WhatShapeIsThis(int a, int b, int c)
         {
-            throw new NotImplementedException();
+            return GeometryUtils.GetTriangleName(a, b, c);
         }
     }
 }
